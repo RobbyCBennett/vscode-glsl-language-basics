@@ -1,0 +1,64 @@
+{
+	"name": "glsl-language-basics",
+	"displayName": "GLSL Language Basics",
+	"description": "Provides syntax highlighting, bracket matching and folding in GLSL files.",
+	"publisher": "rob-bennett",
+	"version": "1.0.0",
+	"repository": "https://github.com/robbycbennett/vscode-glsl-language-basics.git",
+	"engines": {
+		"vscode": "^1.65.2"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"GLSL",
+		"OpenGL",
+		"Graphics",
+		"Shader Language",
+		"Syntax Highlighting"
+	],
+	"contributes": {
+		"grammars": [
+			{
+				"language": "glsl",
+				"scopeName": "source.glsl",
+				"path": "./grammar.json"
+			},
+			{
+				"language": "markdown-glsl",
+				"scopeName": "markdown.glsl.codeblock",
+				"path": "./markdown.json",
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.glsl": "glsl"
+				}
+			}
+		],
+		"languages": [
+			{
+				"id": "glsl",
+				"aliases": [
+					"GLSL"
+				],
+				"extensions": [
+					".comp",
+					".frag",
+					".geom",
+					".tesc",
+					".tese",
+					".vert"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "markdown-glsl"
+			}
+		]
+	},
+	"devDependencies": {
+		"@vscode/vsce": "^3.6.0"
+	}
+}
